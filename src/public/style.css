@@ -1,0 +1,53 @@
+/* LOGIN PAGE */
+.box-area {
+  width: 930px;
+  border-radius: 20px;
+}
+
+.left-box {
+  border-radius: 15px;
+}
+.right-box {
+  padding: 40px 30px 40px 30px;
+}
+
+.imgR {
+  border-radius: 25px;
+}
+.pText {
+  color: rgb(219, 216, 216);
+}
+
+/* ADMIN LOGIN PAGE */
+.adminMain{
+  background-image: url("./images/02.jpg");
+}
+
+.adminBox-area {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 30px;
+  padding: 40px 30px 40px 40px;
+}
+
+.adminBox-text p{
+    color: rgb(219, 216, 216);
+}
+
+/* ADMIN PANNEL */
+.adminPnnel{
+  background-image: url("../public/images/02.jpg");
+}
+
+/*USER PANNEL */
+.card{
+  border-radius: 20px;
+}
+
+/* register form  */
+
+
+

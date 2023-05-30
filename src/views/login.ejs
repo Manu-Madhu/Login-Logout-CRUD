@@ -1,0 +1,61 @@
+<%- include('./partials/header.ejs') %>
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="row border rounded-5 p-3 bg-white shadow box-area">
+                <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box  ">
+                    <img src="/images/02.jpg" alt="" class="img-fluid imgR">
+                    <div class="weText text-center position-absolute">
+                        <h1 class="text-center text-white">Welcome</h1>
+                        <p class="text-center pText">Be verified</p>
+                    </div>
+                </div>
+                <div class="col-md-6 right-box">
+                    <div class="row align-items-center justify-content-center">
+                        <span>
+                            <%=locals.message? message:""%>
+                        </span>
+
+                        <div class="header-text mt-3">
+                            <h2>Halo Again</h2>
+                            <p>We are happy to have u back.</p>
+                        </div>
+                        <form action="/" method="post" onsubmit="return fullyChecking()">
+                            <div class="input-group mb-3 ">
+                                <input type="text" name="email" required placeholder="Email Address" id="lEmail"
+                                    class="form-control form-control-md bg-light fs-6" onchange="emailValidate()">
+                            </div>
+                            <span id="emailError" class="text text-danger mb-2"></span>
+                            <span class="text text-danger">
+                                <%=locals.msg? msg:""%>
+                            </span>
+
+                            <div class="input-group mb-3">
+                                <input type="password" name="password" required placeholder="password" id="lPassword"
+                                    class="form-control form-control-md bg-light fs-6" onchange="passwordValidate()">
+                            </div>
+                            <span id="passwordError" class="text text-danger mb-2"></span>
+
+                            <div class="input-group mb-3">
+                                <button class="btn btn-lg btn-primary w-100 fs-6"
+                                    onclick="emailValidate(),passwordValidate()">Login</button>
+                            </div>
+                        </form>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6"><a href="/admin"
+                                    class="text-decoration-none text-white">Admin Login</a>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <small>Don't have account? <a href="/register" class="text-decoration-none">Sign
+                                    up</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="text-center mt-3">
+            <div>Developed By Manu M @ 2023</div>
+        </footer>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>

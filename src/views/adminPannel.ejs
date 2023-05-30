@@ -1,0 +1,79 @@
+<%- include('./partials/header.ejs')%>
+       <div
+              class="conatain d-flex flex-column align-items-center justify-content-center min-vh-100 overflow-hidden adminPnnel">
+              <div class="row col-md-6 d-flex flex-column align-items-center justify-content-center">
+                     <!-- <div class="col-md-6 justify-content-center align-items-center p-3"> -->
+                     <div
+                            class="p-3 d-flex flex-column justify-content-center align-items-center border rounded-3 shadow bg-light">
+                            <h1 class="text-center text-dark fs-2">Hi <%=locals.msg?msg:"" %> Welcome back</h1>
+                            <div class="d-flex col-md-6 ">
+                                   <button class="btn btn-primary w-50 m-2"><a
+                                                 class="text text-white text-decoration-none" href="/admin/addUser">Add
+                                                 user</a>
+                                   </button>
+                                   <button class="btn btn-primary w-50 m-2"><a
+                                                 class="text text-white text-decoration-none"
+                                                 href="/admin/adminPannel">All users</a>
+                                   </button>
+                                   <button class="btn btn-primary w-50 m-2"><a
+                                                 class="text text-white text-decoration-none" href="/logout">Log Out</a>
+                                   </button>
+                            </div>
+                     </div>
+                     <form
+                            class="p-3 mt-2 d-flex gap-5 border shadow rounded-3 bg-white justify-content-center align-items-center">
+                            <input class="form-control" type="text" placeholder="Search User name, email, mobile"
+                                   name="search">
+                            <button class="btn btn-primary" type="submit" value="Search">Search</button>
+                            <!-- <input type="submit" value="Search"> -->
+                     </form>
+                     <div class="mt-2 d-flex rounded-3 bg-white shadow align-items-center">
+                            <table class="table p-3">
+                                   <thead>
+                                          <tr>
+                                                 <th scope="col">#</th>
+                                                 <th scope="col">Name</th>
+                                                 <th scope="col">Email ID</th>
+                                                 <th scope="col">phone</th>
+                                                 <th scope="col">Action</th>
+                                          </tr>
+                                   </thead>
+                                   <tbody>
+                                          <% if(users.length> 0){%>
+                                                 <% for(let i=0; i < users.length; i++) { %>
+                                                        <tr>
+                                                               <td>
+                                                                      <%= i + 1 %>
+                                                               </td>
+                                                               <td>
+                                                                      <%= users[i].name %>
+                                                               </td>
+                                                               <td>
+                                                                      <%= users[i].email %>
+                                                               </td>
+                                                               <td>
+                                                                      <%= users[i].phone %>
+                                                               </td>
+                                                               <td>
+                                                                      <button class="btn btn-warning">
+                                                                             <a class="text text-decoration-none text-white"
+                                                                                    href="/admin/updateUser?id=<%= users[i]._id %>">Edit</a>
+                                                                      </button>
+                                                                      <button class="btn btn-danger">
+                                                                             <a class="text text-decoration-none text-white"
+                                                                                    href="/admin/deleteUser?id=<%= users[i]._id %>">Delete</a>
+                                                                      </button>
+                                                               </td>
+                                                        </tr>
+                                                        <% } }else{ %>
+                                                               <tr>
+                                                                      <td colspan="5">users not found </td>
+                                                               </tr>
+                                                               <% } %>
+                                   </tbody>
+                            </table>
+                     </div>
+                     <!-- </div> -->
+              </div>
+       </div>
+       <%- include('./partials/footer.ejs')%>

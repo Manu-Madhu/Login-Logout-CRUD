@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs')%>
+    <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center flex-column adminMain">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="row adminBox-area justify-content-center align-items-center adminBox-area">
+                <div class="header-text mt-2 mb-2 adminBox-text">
+                    <h2 class="text-white">Hi Sir</h2>
+                    <p>Enter your Credntials</p>
+                    <span class="text-warning">
+                        <%=locals.message? message:""%>
+                    </span>
+                </div>
+                <form action="/admin" method="post" onsubmit="return adminFullyValidate()">
+                    <div class="input-group mb-3">
+                        <input class="form-control form-control-md bg-light fs-6" type="text"
+                            placeholder="Email Address" name="adminEmail" id="adminEmail" onchange="adminEmail()" required>
+                    </div>
+                    <span id="AdminEmailErrorMSG" class="text text-warning mb-2"></span>
+
+                    <div class="input-group mb-3">
+                        <input class="form-control form-control-md bg-light fs-6" type="password"
+                            placeholder="Enter Password" name="adminPassword" id="adminPassword" onchange="adminPassword()" required>
+                    </div>
+                    <span id="AdminpasswordErrorMSG" class="text text-danger mb-2"></span>
+
+                    <div class="input-group mb-3">
+                        <button class="btn btn-lg btn-primary w-100 fs-6" type="submit" onclick="adminEmail(),adminPassword()">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer class="text-center mt-3">
+            <div>Developed By Manu M @ 2023</div>
+        </footer>
+    </div>
+    <%- include('./partials/footer.ejs')%>
